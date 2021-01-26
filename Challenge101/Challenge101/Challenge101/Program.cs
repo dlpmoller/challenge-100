@@ -8,7 +8,7 @@ namespace Challenge101
 {
     class Program
     {
-        //Sets up and makes an instance of a givenNumbers array
+        //Sets up and makes an instance of a givenNumbers array, maximum being a 100. For reliability's sake, a conditional to end the input phase when 100 is hit is a good idea.
         public static int?[] givenNumbers = new int?[100];
         //Just a reminder to the user of how many numbers they've input
         public static int count = 0;

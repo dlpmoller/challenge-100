@@ -18,7 +18,10 @@ namespace Challenge103
         static void CheckString(string input)
         {
             int upperCaseCount = 0;
+            //Splits string into an array of characters
             char[] characters = input.ToCharArray();
+
+            //Checks every character for uppercase status
             foreach (char item in characters)
             {
                 if (Char.IsUpper(item))
@@ -27,6 +30,7 @@ namespace Challenge103
                 }
             }
 
+            //All-or-nothing conditional
             if (upperCaseCount == characters.Length || upperCaseCount == 0)
             {
                 Console.WriteLine("Yup. " + input + " is indeed what I asked for.");

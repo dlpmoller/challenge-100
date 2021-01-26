@@ -8,6 +8,7 @@ namespace Challenge106
 {
     class Program
     {
+        //Equating a letter with a number in an array of arrays. There is probably a way better method for this.
         static string[][] alphabetNumber = new string[][]
         {
             new string[] {"a","1"},
@@ -48,14 +49,18 @@ namespace Challenge106
         {
             string processedInput = "";
 
+            //Splitting the input into an array.
             char[] characters = input.ToLower().ToCharArray();
             
             foreach (var character in characters)
             {
+                //Runs through the association array to match the character.
                 foreach (var item in alphabetNumber)
                 {
+                    //If it's not on the list, move on.
                     if (Char.Parse(item[0]) == character)
                     {
+                        //Try-catch in case something slips through.
                         try
                         {
                             processedInput += item[1] + " ";
@@ -68,8 +73,11 @@ namespace Challenge106
                 }
             }
 
-            //TODO: Fix outofrange exception when there's just a single special character.
-            Console.WriteLine(processedInput.Remove(processedInput.Length - 1, 1));
+            //Making sure the input doesn't become a negative value, in case of single special characters.
+            if (processedInput.Length > 1)
+            {
+                Console.WriteLine(processedInput.Remove(processedInput.Length - 1, 1));
+            }
             ConvertInput(Console.ReadLine());
         }
     }
